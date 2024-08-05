@@ -3,6 +3,7 @@ import './App.css';
 import Dashboard from './components/Dashboard';
 import Table from './components/FamilyTable';
 import TableNew from './components/FamilyTableNew';
+import TableThree from './components/FamilyTableThree';
 
 function App() {
   return (
@@ -12,6 +13,9 @@ function App() {
         <div className='row'>
           <div className='col-12 col-sm-12 col-md-6 col-lg-6'>
             <Table />
+          </div>
+          <div className='col-12 col-sm-12 col-md-6 col-lg-6'>
+            <TableThree />
           </div>
           <div className='col-12 col-sm-12 col-md-6 col-lg-6'>
             <TableNew />

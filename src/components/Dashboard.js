@@ -103,7 +103,7 @@ const Dashboard = () => {
                     <div className='col-12 col-sm-12 col-md-6 col-lg-6'>
                         <div className="card">
                             <div className="card-body">
-                                <h6 className="card-subtitle mb-2 text-body-secondary">Description</h6>
+                                <h6 className="card-subtitle mb-2 text-body-secondary">CTS25UN: 25 sq.mm Standard Feed Through Terminal Blocks</h6>
                                 <p className="card-text">{descSub}</p>
                             </div>
                         </div>
