@@ -19,11 +19,14 @@ const Dashboard = () => {
                 try {
                     const base64Image = await getBase64(imageFile);
                     localStorage.setItem('storedImage', base64Image);
+                    localStorage.setItem('storedText', desc);
+                    setCheck(true);
+                    setImageFile(null);
+                    setDesc("");
                 } catch (error) {
                     console.log(error, "Catch")
                 }
-                localStorage.setItem('storedText', desc);
-                setCheck(true);
+
             }
         }
     }
@@ -39,6 +42,14 @@ const Dashboard = () => {
     const handleImageChange = (e) => {
         debugger
         setImageFile(e.target.files[0])
+    }
+
+    const handleClear = () => {
+        localStorage.clear();
+        setDescSub("");
+        setImgSub(null);
+        setDesc("")
+        setImageFile(null);
     }
 
     useEffect(() => {
@@ -74,20 +85,22 @@ const Dashboard = () => {
                     </div>
                     <div className='col-12'>
                         <div class="mb-3">
-                            <button type="button" class="btn btn-secondary" onClick={handleSubmit}>Submit</button>
+                            <button type="button" class="btn btn-danger" onClick={handleSubmit}>Submit</button>
+                            <button type="button" class="btn btn-secondary mx-1" onClick={handleClear}>Clear</button>
                         </div>
                     </div>
 
                 </div>
                 <div className='row'>
-                    <div className='col-6'>
+                    <div className='col-12 col-sm-12 col-md-6 col-lg-6'>
                         <div className="card">
                             <div className="card-body">
                                 <img src={imgSub} class="card-img-top" alt="..." />
                             </div>
                         </div>
+
                     </div>
-                    <div className='col-6'>
+                    <div className='col-12 col-sm-12 col-md-6 col-lg-6'>
                         <div className="card">
                             <div className="card-body">
                                 <h6 className="card-subtitle mb-2 text-body-secondary">Description</h6>
